@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./js/jquery-3.3.1.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <title>appleSwiper</title>
+
+</head>
+
+<body>
+
+    <main>
+        <div class="container">
+            <div class="wrapText">
+                <h4>Smile Like Sprite</h4>
+                <h4>Nirvana</h4>
+            </div>
+            <div class='desk'>
+
+
+                <li id='pre'>《</li>
+                <li id='next'>》</li>
+
+
+                <div class='desk-mask'></div>
+                <div class='screem'>
+                    <div class="images">
+                        <img src="./img/timg (9).jpg" alt="picture" width='450' height="450">
+                        <img src="./img/timg (2).jpg" alt="picture" width='450' height="450">
+                        <img src="./img/timg (5).jpg" alt="picture" width='450' height="450">
+                        <img src="./img/timg (6).jpg" alt="picture" width='450' height="450">
+                    </div>
+
+                </div>
+            </div>
+            <div class='buttons'>
+
+                <ul class="clearfix">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <div class='footer'>
+                <h4>Oh my baby,how beautiful you are</h4>
+            </div>
+
+
+
+        </div>
+
+
+
+    </main>
+
+</body>
+
+<script>
+    $buttons = $('.buttons>ul>li')
+
+    for (let i = 0; i < $buttons.length; i++) {
+
+        let $button = $buttons.eq(i)
+        $button.on('click', function(e) {
+            let $current = $(e.currentTarget)
+            let index = $current.index()
+            let distance = (-450) * index
+            $('.images').css({
+                transform: `translateX(${distance}px)`
+            })
+            $current.addClass('active')
+                .siblings('.active').removeClass('active')
+        })
+
+    }
+
+
+    let n = 0
+    let size = $buttons.length
+    let n2 = n % size
+    $buttons.eq(n2).trigger('click')
+    let timer = setInterval(function() {
+        n++
+        n2 = n % size
+        $buttons.eq(n2).trigger('click')
+    }, 4000)
+
+
+
+
+
+    $('.screem').on('mouseenter', function() {
+        console.log(111)
+        window.clearInterval(timer)
+    })
+    $('.screem').on('mouseleave', function() {
+        timer = setInterval(function() {
+            n++
+            n2 = n % size
+            $buttons.eq(n2).trigger('click')
+        }, 4000)
+
+    })
+
+
+
+    $('#pre').on('click', function() {
+        n--
+        if (n === -1) {
+            n = size
+        }
+        n2 = n % size
+        $buttons.eq(n2).trigger('click')
+    })
+    $('#next').on('click', function() {
+        n++
+
+        n2 = n % size
+        $buttons.eq(n2).trigger('click')
+    })
+</script>
+
+</html>

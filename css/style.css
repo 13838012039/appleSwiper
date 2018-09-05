@@ -1,0 +1,155 @@
+/* 全局部分 */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Myriad Pro", Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+    color: #797979;
+}
+
+clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+body {
+    height: 100vh;
+}
+
+
+/* 主要内容main部分 */
+
+.container {
+    padding: 1px;
+    background: #F2F2F2
+}
+
+.wrapText {
+    text-align: center;
+    width: 960px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.desk {
+    position: relative;
+    width: 750px;
+    margin: 0 auto;
+    background-size: cover;
+    background-position: center;
+    margin-top: 28px;
+    border-radius: 3px;
+    box-shadow: 0px 0px 7px 1px rgba(50, 50, 50, 0.75);
+}
+
+.desk .desk-mask {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    left: 0;
+    top: 0;
+}
+
+.screem {
+    border-radius: 5px;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    width: 450px;
+    margin: 0 auto;
+}
+
+.images {
+    display: flex;
+    transition: all 1s;
+}
+
+
+/* buttons部分 */
+
+.buttons {
+    margin: 10px 0;
+}
+
+.buttons ul {
+    width: 960px;
+    display: flex;
+    margin: 0 auto;
+}
+
+.buttons ul li {
+    height: 30px;
+    width: 30px;
+    margin-left: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    list-style: none;
+    cursor: pointer;
+}
+
+.buttons ul li.active {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.buttons ul li:first-child {
+    margin-left: 380px;
+}
+
+.desk li#next {
+    color: white;
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 80px;
+    text-align: center;
+    height: 80px;
+    width: 50px;
+    background: rgba(50, 50, 50, 0.5);
+    border-radius: 10px;
+    list-style: none;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    margin-top: -40px;
+    left: 100%;
+    margin-left: -100px;
+    z-index: 3;
+}
+
+.desk li#pre {
+    color: white;
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 80px;
+    text-align: center;
+    height: 80px;
+    width: 50px;
+    background: rgba(50, 50, 50, 0.5);
+    border-radius: 10px;
+    list-style: none;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    margin-top: -40px;
+    right: 100%;
+    margin-right: -100px;
+    z-index: 3;
+}
+
+
+/* footer部分 */
+
+.footer {
+    text-align: center;
+}
